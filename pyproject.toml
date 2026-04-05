@@ -1,0 +1,40 @@
+[tool.poetry]
+name        = "sql-chat-autopecas"
+version     = "0.1.0"
+description = "Text-to-SQL chatbot para banco de auto peças"
+authors     = ["Você <voce@email.com>"]
+readme      = "README.md"
+packages    = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python            = "^3.11"
+
+# LangChain core + integrações
+langchain          = "^0.3"
+langchain-community= "^0.3"
+langchain-ollama   = "^0.2"
+
+# Banco de dados
+pymysql            = "^1.1"
+sqlalchemy         = "^2.0"
+
+# Frontend
+streamlit          = "^1.35"
+
+# Dados fictícios
+faker              = "^25.0"
+
+# Utilitários
+python-dotenv      = "^1.0"
+pandas             = "^2.2"
+
+[tool.poetry.group.dev.dependencies]
+ipython   = "^8.0"
+rich      = "^13.0"
+
+[build-system]
+requires      = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+seed = "database.seed:main"
